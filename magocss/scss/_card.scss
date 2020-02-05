@@ -1,0 +1,25 @@
+/* Card
+- card (wraper)
+- card-img-top
+- card-img-bottom */ 
+
+.card {
+    @include roundBorder('regular');
+    overflow: hidden;
+}
+
+.card-small {
+    @include roundBorder('small');
+}
+
+.card-medium {
+    @include roundBorder('medium');
+}
+
+.card-large {
+    @include roundBorder('large');
+}
+
+.card-xlarge {
+    @include roundBorder('xlarge');
+}

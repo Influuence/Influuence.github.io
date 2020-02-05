@@ -1,0 +1,20 @@
+// Bordas arredondadas
+@mixin roundBorder($size) {
+        @if $size == 'small' {
+            border-radius: calc(#{$base-raio} / 2);
+        }@else if $size == 'regular' {
+            border-radius: $base-raio;
+        }@else if $size == 'medium' {
+            border-radius: calc(#{$base-raio} * 2);
+        }@else if $size == 'large' {
+            border-radius: calc(#{$base-raio} * 4);
+        }@else if  $size == 'xlarge' {
+            border-radius: calc(#{$base-raio} * 8);
+        }@else if $size == 'total' {
+            border-radius: calc(#{$base-raio} * 1000);
+        }@else if $size == 'circle' {
+            border-radius: 100%;
+        }@else {
+            @error 'Insira um raio de borda válido';
+        }
+}

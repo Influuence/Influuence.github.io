@@ -1,0 +1,45 @@
+// Font-weight
+@each $style, $value in $textWeight {
+    ._font-#{$style} {
+        font-weight: $value !important;
+    }
+}
+
+// Text Size
+@each $size, $value in $textBody{
+    ._text-#{$size}-size {
+        @if $size == 'small' {
+            line-height: $small-lh;
+        }
+        font-size: $value !important;
+    } 
+}
+
+// Headers Class
+@each $header, $size in $textHeader {
+    ._#{$header} {
+            font-size: $size !important;
+            @include textWeight('bold');
+        }    
+    }
+
+// Alinhamentos
+._text-center {
+    text-align: center !important;
+}
+
+._text-right {
+    text-align: right !important;
+}
+
+._text-left {
+    text-align: left !important;
+}
+
+// Uppercase
+
+._uppercase {
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    letter-spacing: 1.2px !important;
+}

@@ -1,0 +1,16 @@
+@use 'sass:color';
+
+._shadow-s,
+%shadow-s {
+    box-shadow: 0 .125rem .25rem hsla(color.hue($base-color), 5%, 2%, 0.075) !important;
+}
+
+._shadow,
+%shadow {
+    box-shadow: 0 .5rem 1rem hsla(color.hue($base-color), 5%, 2%, 0.075) !important;
+}
+
+._shadow-l,
+%shadow-l {
+    box-shadow: 0 1rem 3rem hsla(color.hue($base-color), 5%, 2%, 0.075) !important;
+}

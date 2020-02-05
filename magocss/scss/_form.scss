@@ -1,0 +1,26 @@
+.form {
+    @include spaceStretch($space-s);
+    border: $border-size solid $v-grey-200;
+    @extend %round;
+    font-family: $textFont;
+    font-size: $base-text;
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        font-family: $textFont;
+        font-size: $base-text;
+        color: $v-grey-400;
+    } 
+}
+
+.form-off-white {
+    @extend %v-grey-100;
+}
+
+.form-solid {
+    @extend %v-grey-100;
+    border-color: transparent;
+    @include addShadow('small');
+}

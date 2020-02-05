@@ -1,0 +1,161 @@
+@use "sass:color";
+
+// Cores de Textos
+@each $targets, $colors in $map-typography {
+    ._#{$targets}-color {
+        color: $colors !important;
+    }
+}
+
+// Backgrounds
+@each $bg, $colors in $map-background {
+    ._bg-#{$bg}-color {
+        background-color: $colors !important;
+    }
+}
+
+
+// Link Color 
+@each $status, $colors in $status-colors {
+  ._link-#{$status} {
+      color: $colors !important;
+      transition: color .2s;
+      &:hover {
+        color: color.scale($colors, $saturation: -13%, $lightness: -20%) !important;
+      }
+  }
+}
+
+// Bordas
+@each $name, $color in $border-colors {
+    ._border-color-#{$name} {
+        border-color: $color !important;
+    }
+}
+
+// Variações de Cores Claras - Base
+._lv-100,
+%lv-100 {
+  background-color: $lv-100 !important;
+}
+._lv-200,
+%lv-200 {
+  background-color: $lv-200 !important;
+}
+
+._lv-300,
+%lv-300 {
+  background-color: $lv-300 !important;
+}
+
+._lv-400,
+%lv-400 {
+  background-color: $lv-400 !important;
+}
+
+._lv-500,
+%lv-500 {
+  background-color: $lv-500 !important;
+}
+
+._lv-600,
+%lv-600 {
+  background-color: $lv-600 !important;
+}
+
+// Variações de Cores Escuras - Base
+._dv-100,
+%dv-100 {
+  background-color: $dv-100 !important;
+}
+
+._dv-200,
+%dv-200 {
+  background-color: $dv-200 !important;
+}
+
+._dv-300,
+%dv-300 {
+  background-color: $dv-300 !important;
+}
+
+._dv-400,
+%dv-400 {
+  background-color: $dv-400 !important;
+}
+
+._dv-500,
+%dv-500 {
+  background-color: $dv-500 !important;
+}
+
+// VAriação tons de cinza - base
+._v-grey-100,
+%v-grey-100 {
+  background-color: $v-grey-100 !important;
+}
+
+._v-grey-200,
+%v-grey-200 {
+  background-color: $v-grey-200 !important;
+}
+
+._v-grey-300,
+%v-grey-300 {
+  background-color: $v-grey-300 !important;
+}
+
+._v-grey-400,
+%v-grey-400 {
+  background-color: $v-grey-400 !important;
+}
+
+// Variações de Cores Claras - Acentuação
+._alv-100,
+%alv-100 {
+  background-color: $alv-100 !important;
+}
+._alv-200,
+%alv-200 {
+  background-color: $alv-200 !important;
+}
+
+._alv-300,
+%alv-300 {
+  background-color: $alv-300 !important;
+}
+
+._alv-400,
+%alv-400 {
+  background-color: $alv-400 !important;
+}
+
+._alv-500,
+%alv-500 {
+  background-color: $alv-500 !important;
+}
+// Variações de Cores Escuras - Acentuação
+._adv-100,
+%adv-100 {
+  background-color: $adv-100 !important;
+}
+
+._adv-200,
+%adv-200 {
+  background-color: $adv-200 !important;
+}
+
+._adv-300,
+%adv-300 {
+  background-color: $adv-300 !important;
+}
+
+._adv-400,
+%adv-400 {
+  background-color: $adv-400 !important;
+}
+
+._adv-500,
+%adv-500 {
+  background-color: $adv-500 !important;
+}

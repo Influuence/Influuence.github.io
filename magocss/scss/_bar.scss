@@ -1,0 +1,49 @@
+.bar {
+    padding: $space-m 0;
+
+    & .flex-row {
+        align-items: center;
+    }
+}
+
+.bar-l {
+    padding: $space-l 0;
+}
+
+.bar-xl {
+    padding: $space-xl 0;
+}
+
+.bar-xxl {
+    padding: $space-xxl 0;
+}
+
+.bar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    & .bar-item {
+        margin: 0 $space-s;
+    }
+    & .bar-link {
+        padding: $space-s;
+        color: $dark-grey-color;
+        &:visited {
+            color: $dark-grey-color;
+        }
+    }
+}
+
+.bar-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bar-right {
+    margin-left: auto;
+}
+
+.bar-left {
+    margin-right: auto;
+}

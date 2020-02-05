@@ -1,0 +1,48 @@
+.badge { 
+    border-radius: 100px;
+    font-size: $small-text;
+    font-weight: normal;
+    padding: $space-xs  theHalf($space-xs);
+}
+
+.badge-medium {
+    padding: $space-s theHalf($space-s);
+    font-size: $base-text;
+}
+
+.badge-large {
+    padding: $space-m theHalf($space-m);
+    font-size: $large-text;
+}
+
+.badge-base-color {
+    background-color: $base-color;
+    color: $white-color;
+}
+
+.badge-accent-color {
+    background-color: $accent-color;
+    color: $white-color;
+}
+
+.badge-success-color {
+    background-color: $success-color;
+    color: $white-color;
+}
+
+.badge-warning-color {
+    background-color: $warning-color;
+    color: $white-color;
+}
+
+.badge-danger-color {
+    background-color: $danger-color;
+    color: $white-color;
+}
+
+
+
+.badge-circle {
+    border-radius: 100%;
+    padding: $space-xs;
+}

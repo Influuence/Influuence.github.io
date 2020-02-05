@@ -1,0 +1,10 @@
+node_modules
+images
+js
+dist
+.eslintrc.js
+debug.log
+package-lock.json
+style.css
+style.css.map
+custom.scss

@@ -1,0 +1,11 @@
+// Espaçamentos
+@function theHalf($size){
+    @return $size + ($size / 2);
+}
+
+// Unidade de medida
+@function convertToRem($target, $context: 16){
+    @return $target / $context + rem;
+}
+
+// Grossura de borda

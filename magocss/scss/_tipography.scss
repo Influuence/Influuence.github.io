@@ -1,0 +1,44 @@
+/*
+- Headlines
+- classes de headlines
+- text body
+- headline small
+- caixa auto
+- Peso de texto
+*/
+
+body {
+    font-size: $base-text;
+    line-height: $base-lh;
+    font-family: $textFont;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include textWeight('bold');
+    font-family: $headerFont;
+    line-height: $head-lh;
+}
+
+h1 {
+    font-size: ms(5);
+}
+
+h2 {
+    font-size: ms(4);
+}
+
+h3 {
+    font-size: ms(3);
+}
+
+h4 {
+    font-size: ms(2);
+}
+
+h5 {
+    font-size: ms(1);
+}
+
+h6 {
+    font-size: ms(0);
+}

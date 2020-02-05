@@ -1,0 +1,14 @@
+@mixin mediaQuery($bp, $option: 'min'){
+    $break: 0;
+    @if $option == 'min' {
+        $break: 'min-width: #{$bp}';    
+    }@else if $option == 'max' {
+        $break: 'max-width: #{$bp}';
+    }@else{
+        $break: $option;
+    }
+
+    @media screen and ($break){
+        @content;
+    }
+}

@@ -1,0 +1,225 @@
+@use 'sass:color';
+
+.btn {
+    @include spaceSquish($space-l);
+    font-family: $headerFont;
+    font-size: $large-text;
+    font-weight: 500;
+    border-radius: $base-raio;
+    border: $border-size solid transparent;
+    cursor: pointer;
+    line-height: 1.2;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+.btn-medium {
+    @include spaceSquish($space-m);
+    font-size: $base-text;
+}
+
+.btn-small {
+    @include spaceSquish($space-s);
+    font-size: $small-text;
+}
+
+.btn-base {
+    background-color: $base-color;
+    color: $white-color;
+    transition: all .3s;
+    &:hover {
+        @extend %dv-300;
+    }
+}
+
+a.btn-base {
+    color: $white-color;
+    &:hover,
+    &:visited {
+        color: $white-color !important;
+    }
+}
+
+.btn-accent {
+    background-color: $accent-color;
+    color: $white-color;
+    transition: background-color .3s;
+    &:hover {
+        @extend %adv-300;
+    }
+}
+
+a.btn-accent {
+    color: $white-color;
+    &:hover,
+    &:visited {
+        color: $white-color !important;
+    }
+}
+
+.btn-success {
+    background-color: $success-color;
+    color: $white-color;
+    transition: background-color .3s;
+    &:hover {
+        background-color: color.scale($success-color, $saturation: 13%, $lightness: -20%);
+    }
+}
+
+a.btn-success {
+    color: $white-color;
+    &:hover,
+    &:visited {
+        color: $white-color !important;
+    }
+}
+
+.btn-warning {
+    background-color: $warning-color;
+    color: $white-color;
+    transition: background-color .3s;
+    &:hover {
+        background-color: color.scale($warning-color, $saturation: 13%, $lightness: -20%);
+    }
+}
+
+a.btn-warning {
+    color: $white-color;
+    &:hover,
+    &:visited {
+        color: $white-color !important;
+    }
+}
+
+.btn-danger {
+    background-color: $danger-color;
+    color: $white-color;
+    transition: background-color .3s;
+    &:hover {
+        background-color: color.scale($danger-color, $saturation: 13%, $lightness: -20%);
+    }
+}
+
+a.btn-danger {
+    color: $white-color;
+    &:hover,
+    &:visited {
+        color: $white-color !important;
+    }
+}
+
+.btn-border-base {
+    background-color: transparent;
+    color: $base-color;
+    border-color: currentColor;
+    transition: background-color .3s;
+    &:hover {
+        background-color: $base-color;
+        color: $white-color;
+        border-color: $base-color;
+    }
+}
+
+a.btn-border-base {
+    color: $base-color;
+    &:visited {
+        color: $base-color !important;
+    }
+    &:hover {
+        color: $white-color !important;
+    }
+}
+
+.btn-border-accent {
+    background-color: transparent;
+    color: $accent-color;
+    border-color: currentColor;
+    transition: background-color .3s;
+    &:hover {
+        background-color: $accent-color;
+        color: $white-color;
+        border-color: $accent-color;
+    }
+}
+
+a.btn-border-accent {
+    color: $accent-color;
+    &:visited {
+        color: $accent-color !important;
+    }
+    &:hover {
+        color: $white-color !important;
+    }
+}
+
+.btn-border-success {
+    background-color: transparent;
+    color: $success-color;
+    border-color: currentColor;
+    transition: background-color .3s;
+    &:hover {
+        background-color: $success-color;
+        color: $white-color;
+        border-color: $success-color;
+    }
+}
+
+a.btn-border-success {
+    color: $success-color;
+    &:visited {
+        color: $success-color !important;
+    }
+    &:hover {
+        color: $white-color !important;
+    }
+}
+
+.btn-border-warning {
+    background-color: transparent;
+    color: $warning-color;
+    border-color: currentColor;
+    transition: background-color .3s;
+    &:hover {
+        background-color: $warning-color;
+        color: $white-color;
+        border-color: $warning-color;
+    }
+}
+
+a.btn-border-warning {
+    color: $warning-color;
+    &:visited {
+        color: $warning-color !important;
+    }
+    &:hover {
+        color: $white-color !important;
+    }
+}
+
+.btn-border-danger {
+    background-color: transparent;
+    color: $danger-color;
+    border-color: currentColor;
+    transition: background-color .3s;
+    &:hover {
+        background-color: $danger-color;
+        color: $white-color;
+        border-color: $danger-color;
+    }
+}
+
+a.btn-border-danger {
+    color: $danger-color;
+    &:visited {
+        color: $danger-color !important;
+    }
+    &:hover {
+        color: $white-color !important;
+    }
+}

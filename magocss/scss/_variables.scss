@@ -1,0 +1,165 @@
+@use 'sass:color';
+@use 'sass:map';
+
+// Espaçamentos
+$space-default: 16px !default;
+$space-xs: ($space-default / 4); 
+$space-s: ($space-default / 2); 
+$space-m: $space-default; 
+$space-l: ($space-default * 2) ; 
+$space-xl: ($space-default * 4);
+$space-xxl: ($space-default * 8);
+
+$spaces: (
+        "xs": $space-xs,
+        "s": $space-s,
+        "m": $space-m,
+        "l": $space-l,
+        "xl": $space-xl,
+        "xxl": $space-xxl
+    );
+
+// Bordas Arredondadas
+$enable-border-radius: true !default;
+$base-raio: convertToRem(4) !default;
+$border-round-small: calc(#{$base-raio} / 2);
+$border-round: $base-raio;
+$border-round-medium: calc(#{$base-raio} * 2);
+$border-round-large: calc(#{$base-raio} * 4);
+$border-round-xlarge: calc(#{$base-raio} * 8);
+
+
+// Grossura de borda
+$border-size: 1px !default;
+
+// Grid Sistem
+$grid-columns: 12 !default;
+$grid-gutter: 30px !default;
+$grid-container: 1140px !default;
+
+// Media Query
+$bp-s: 414px;
+$bp-t: 768px;
+$bp-d: 1024px;
+
+// Tipografia
+$textFont: 'Roboto', sans-serif !default;
+$headerFont: 'Roboto', sans-serif !default;
+
+$base-text: convertToRem(16) !default;
+$small-text: convertToRem(12) !default;
+$large-text: convertToRem(20) !default;
+
+$base-lh: 1.5 !default;
+$small-lh: 1.6 !default;
+$head-lh: 1.3 !default;
+
+$sz-1: convertToRem(48) !default;
+$sz-2: convertToRem(36) !default;
+$sz-3: convertToRem(24) !default;
+$sz-4: convertToRem(18) !default;
+$sz-5: convertToRem(14) !default;
+$sz-6: convertToRem(12) !default;
+
+$textWeight: ( 
+    'light': 300,
+    'normal': 400,
+    'bold': 700,
+    'black': 900
+);
+
+$textHeader: (
+    'h1': $sz-1,
+    'h2': $sz-2,
+    'h3': $sz-3,
+    'h4': $sz-4,
+    'h5': $sz-5,
+    'h6': $sz-6,
+);
+
+$textBody: (
+    'base': $base-text,
+    'small': $small-text,
+    'big': $large-text
+);
+
+// Cores
+$base-color: hsl(226, 86%, 62%) !default;
+$lv-100: color.scale($base-color, $saturation: -13%, $lightness: 20%);
+$lv-200: color.scale($lv-100, $saturation: -20%, $lightness: 20%);
+$lv-300: color.scale($lv-200, $saturation: -25%, $lightness: 30%);
+$lv-400: color.scale($lv-300, $saturation: -30%, $lightness: 40%);
+$lv-500: color.scale($lv-400, $saturation: -35%, $lightness: 50%);
+$lv-600: color.scale($lv-500, $saturation: -40%, $lightness: 60%);
+
+
+$dv-100: color.scale($base-color, $saturation: -13%, $lightness: 20%);
+$dv-200: color.scale($dv-100, $saturation: 13%, $lightness: -20%);
+$dv-300: color.scale($dv-200, $saturation: 13%, $lightness: -20%);
+$dv-400: color.scale($dv-300, $saturation: 13%, $lightness: -20%);
+$dv-500: color.scale($dv-400, $saturation: 13%, $lightness: -20%);
+$dv-600: color.scale($dv-500, $saturation: 13%, $lightness: -20%);
+
+$v-grey-100: color.change($base-color,$saturation: 42, $lightness: 97);
+$v-grey-200: color.change($base-color,$saturation: 35, $lightness: 85);
+$v-grey-300: color.change($base-color,$saturation: 28, $lightness: 73);
+$v-grey-400: color.change($base-color,$saturation: 21, $lightness: 61);
+
+$accent-color: hsl(25, 100%, 60%) !default;
+$alv-100: color.scale($accent-color, $saturation: -13%, $lightness: 20%);
+$alv-200: color.scale($alv-100, $saturation: -20%, $lightness: 20%);
+$alv-300: color.scale($alv-200, $saturation: -25%, $lightness: 30%);
+$alv-400: color.scale($alv-300, $saturation: -30%, $lightness: 40%);
+$alv-500: color.scale($alv-400, $saturation: -35%, $lightness: 50%);
+$alv-600: color.scale($alv-500, $saturation: -40%, $lightness: 60%);
+
+$adv-100: color.scale($accent-color, $saturation: -13%, $lightness: 20%);
+$adv-200: color.scale($adv-100, $saturation: 13%, $lightness: -20%);
+$adv-300: color.scale($adv-200, $saturation: 13%, $lightness: -20%);
+$adv-400: color.scale($adv-300, $saturation: 13%, $lightness: -20%);
+$adv-500: color.scale($adv-400, $saturation: 13%, $lightness: -20%);
+$adv-600: color.scale($adv-500, $saturation: 13%, $lightness: -20%);
+
+$support-light-grey: hsl(0, 0%, 95%) !default;
+$support-medium-grey: #ddd !default;
+
+$dark-grey-color: hsl(0, 0%, 30%) !default;
+$light-grey-color: hsl(0, 0%, 50%) !default;
+$white-color: hsl(0, 0%, 100%) !default;
+
+$success-color: hsl(134, 61%, 41%) !default;
+$danger-color: hsl(354, 70%, 54%) !default;
+$warning-color: hsl(45, 100%, 51%) !default;
+
+$status-colors: (
+    'success': $success-color,
+    'danger': $danger-color,
+    'warning': $warning-color
+);
+
+$theme-colors: (
+    'base': $base-color,
+    'accent': $accent-color
+);
+
+$text-color: (
+    'dark-grey': $dark-grey-color,
+    'light-grey': $light-grey-color,
+    'white': $white-color
+);
+
+$support-colors: (
+    'light-grey': $support-light-grey,
+    'medium-grey': $support-medium-grey
+);
+
+$merge-arr: map-merge($status-colors , $text-color);
+$map-typography: map-merge($merge-arr , $theme-colors);
+
+$bg-arr: map-merge($status-colors, $support-colors);
+$map-background: map-merge($bg-arr, $theme-colors);
+
+$border-merge: map-merge($status-colors, $support-colors);
+$border-colors: map-merge($border-merge , $theme-colors)
+
+

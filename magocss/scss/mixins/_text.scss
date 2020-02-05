@@ -1,0 +1,23 @@
+@mixin textWeight($type){
+    $style: null;
+    @if $type == 'normal' {
+        $style: 400;
+    }@else if $type == 'light' {
+        $style: 300;
+    }@else if $type == 'bold' {
+        $style: 700;
+    }@else if $type == 'black' {
+        $style: 900;
+    }
+    font-weight: $style;
+}
+
+@mixin sizeText($size){
+    @if $size == 'base' {
+        font-size: $base-text;
+    }@else if $size == small {
+        font-size: $small-text;
+    }@else if $size == 'big' {
+        font-size: $large-text;
+    }
+}

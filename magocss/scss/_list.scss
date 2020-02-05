@@ -1,0 +1,43 @@
+.list {
+    & li {
+        padding: $space-s;
+        border-bottom: 1px solid $support-medium-grey;
+    }
+}
+
+.list-medium {
+    & li {
+        padding: $space-m;
+    }
+}
+
+.list-large {
+    & li {
+        padding: $space-l;
+    }
+}
+
+.list-no-border {
+    border: none;
+    & li {
+        border-bottom: none;
+    }
+}
+
+.list-border {
+    border: 1px solid $support-medium-grey;
+    & li:last-child {
+        border-bottom: 0;
+    }
+}
+
+.list-hover {
+    & li:hover {
+        background-color: $support-light-grey;
+    }
+}
+
+.list-striped li:nth-of-type(even){
+    background-color: $support-light-grey;
+    
+}

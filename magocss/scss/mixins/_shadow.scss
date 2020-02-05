@@ -1,0 +1,12 @@
+@use 'sass:color';
+@mixin addShadow($size){
+    @if $size == 'small' {
+        box-shadow: 0 .125rem .25rem hsla(color.hue($base-color), 5%, 2%, 0.075);
+    }@else if $size == 'regular' {
+        box-shadow: 0 .5rem 1rem hsla(color.hue($base-color), 5%, 2%, 0.075);
+    }@else if $size == 'large' {
+        box-shadow: 0 1rem 3rem hsla(color.hue($base-color), 5%, 2%, 0.075);
+    }@else {
+        @error 'Insira um tamanho de sombra válido';
+    }
+}

@@ -1,0 +1,20 @@
+@use 'sass:color';
+
+small {
+    font-size: 80%;
+    font-weight: 500;
+    display: inline-block;
+}
+
+a {
+    color: $accent-color;
+    text-decoration: none;
+
+    &:hover {
+        color: color.scale($accent-color, $saturation: -13%, $lightness: -20%) !important;
+    }
+
+    &:visited {
+        color: $base-color;
+    }
+}

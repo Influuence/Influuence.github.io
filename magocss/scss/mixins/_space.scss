@@ -1,0 +1,19 @@
+@mixin spaceInsert($size){
+    padding: $size;
+}
+
+@mixin spaceSquish($size){
+    padding: ($size / 2) $size;
+}
+
+@mixin spaceStretch($size) {
+    padding: theHalf($size) $size;
+}
+
+@mixin spaceStack($size) {
+    margin-bottom: $size;  
+}
+
+@mixin spaceInline($size){
+    margin-right: $size;
+}
