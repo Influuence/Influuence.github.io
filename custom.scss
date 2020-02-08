@@ -1,0 +1,410 @@
+@use "magocss/scss/functions";
+$modularscale: (
+  base: 1rem,
+  ratio: 1.2
+);
+// --------
+
+$textFont: "Catamaran", sans-serif;
+$headerFont: $textFont;
+$accent-color: #FF824D;
+$base-text: 1.125rem;
+$small-text: 0.9375rem;
+$large-text: 1.35rem;
+
+// --------
+$dark-text-color: #464951;
+$light-text-color: #7A7E8C;
+$custom-variarion-500: #E8EDFF;  
+
+@import "magocss/scss/mago";
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: $dark-text-color;
+}
+
+img {
+    max-width: 100%;
+}
+
+// ---------
+
+.btn {
+    @include roundBorder('medium');
+    display: inline-block;
+}
+
+.btn-accent {
+    box-shadow: 0px 4px 5px rgba(255, 130, 77, 0.25);
+}
+
+.btn-cta-accent {
+    box-shadow: 0px 2px 40px rgba(255, 130, 77, 0.4);
+}
+
+.btn-cta-base {
+    box-shadow: 0px 2px 40px rgba(75, 114, 241, 0.4);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-function {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-border-accent {
+    box-shadow: 0px 4px 5px rgba(255, 130, 77, 0.25);
+    background-color: $white-color;
+    &:hover {
+        background-color: $white-color;
+    }
+}
+
+a.btn-border-accent {
+    &:hover {
+        color: $accent-color !important;
+    }
+}
+
+.btn-border-base {
+    box-shadow: 0px 4px 5px rgba(35, 52, 107, 0.25);
+    background-color: $white-color;
+    &:hover {
+        background-color: $white-color;
+    }
+}
+
+a.btn-border-base {
+    &:hover {
+        color: $base-color !important;
+    }
+}
+
+// -------
+
+._light-text-color {
+    color: $light-text-color !important;
+}
+
+._custom-variation-500 {
+    background-color: $custom-variarion-500 !important;
+}
+
+._d-block {
+    display: block !important;
+}
+
+._d-inline-block {
+    display: inline-block !important;
+}
+
+._w-100 {
+    width: 100% !important;
+}
+
+._bg-white-color {
+    background-color: $white-color !important;
+}
+
+._space-between {
+    justify-content: space-between !important;
+}
+
+._align-items-center {
+    align-items: center;
+}
+
+._align-items-start {
+    align-items: flex-start;
+}
+
+._justify-end {
+    justify-content: flex-end;
+}
+
+._shadow-s {
+    box-shadow: 0px 2px 5px rgba(35, 52, 107, 0.25) !important;
+}
+._relative {
+    position: relative;
+}
+
+// ----------
+
+.mark-list {
+    & li {
+        margin: $space-s 0;
+    } 
+    & li::before {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border: 3px solid $base-color;
+        background-color: transparent;
+        border-radius: 100%;
+        margin-right: $space-s;
+    }
+}
+
+.intro-image {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.servicos {
+    display: flex;
+    flex-direction: column;
+}
+
+.pilares-item {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.cta-block {
+    margin: 0 auto;
+}
+
+.social-links {
+    & img {
+        @include spaceInline($space-m);
+    }
+}
+
+.intro-landing {
+    margin: 0 auto;
+}
+
+
+/*--------------------------
+Código Acordeon */
+
+.acordeon .ac-title::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: right;
+    transform: rotate(0deg);
+    transition: transform .3s;
+}
+
+.acordeon .ac-title.rotate::after {
+    transform: rotate(180deg);
+}
+
+.acordeon {
+    & p {
+        margin-top: $space-m;
+        margin-bottom: 0;
+    }
+
+}
+
+.ac-title {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.hide.visible {
+    display: block;
+    animation: toDown .7s forwards;
+
+}
+
+@keyframes toDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+@keyframes rotateItem {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+
+
+/*--------------------------
+Código Timeline*/
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: $lv-400;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  .time-item {
+    padding: $space-m $space-l;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .time-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: -10px;
+    background-color: $white-color;
+    border: 4px solid $base-color;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the time-item to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the time-item to the right */
+  .right {
+    left: 50%;
+  }
+
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -14px;
+  }
+  
+  /* The actual content */
+  .content {
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+
+  @include mediaQuery($bp-t){
+    .time-item.left {
+        text-align: right;
+    }
+
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+    left: 31px;
+    }
+    
+    /* Full-width containers */
+    .time-item {
+    width: 100%;
+    padding: theHalf($space-m);
+    // padding-right: $space-m;
+    }
+    
+    /* Make sure that all arrows are pointing leftwards */
+    .time-item::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+    left: 1px;
+    }
+    
+    /* Make all right containers behave like the left ones */
+    .right {
+    left: 0%;
+    }
+  }
+
+/*--------------------------*/
+
+@include mediaQuery($bp-t){
+    .intro, .data {
+        width: calc(((100% * 6) / 12) - 32px);
+        @include spaceInline($space-l);
+    }
+
+    .acordeon {
+        width: calc(((100% * 6) / 12) - 32px);
+        @include spaceInline($space-l);
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .intro-image, .pilares-list, .data-illustration, .cta-block, .intro-landing, .bullet-image{
+        width: calc((100% * 6) / 12);
+    }
+
+    .servicos, .type-service {
+        width: calc(((100% * 4) / 12) - 32px);
+        @include spaceInline($space-l);
+        &:last-child {
+            margin-right: 0;
+        } 
+    }
+
+    .cons, .social, .vantagens {
+        width: calc(((100% * 5) / 12) - 32px);
+        @include spaceInline($space-l);
+    }
+
+    .pilares-icon {
+        min-width: 76px;
+        height: 76px;
+        @include spaceInline($space-m);
+    }
+
+    .pilares-item, .data-item {
+        flex-flow: row nowrap;
+        @include spaceStack($space-l);
+    }
+
+    .data-item {
+        display: flex;
+        & span {
+            width: 96px;
+            height: 79px;
+            @include spaceInline($space-l);
+        }
+    } 
+
+}
+
+@include mediaQuery($bp-s, 'max') {
+    .acordeon {
+        width: 100%;
+    }
+}
+

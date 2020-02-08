@@ -18,3 +18,7 @@ a {
         color: $base-color;
     }
 }
+
+p {
+    margin-bottom: theHalf($space-m);
+}
