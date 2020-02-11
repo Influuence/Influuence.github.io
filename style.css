@@ -406,8 +406,7 @@ Utilitátios
   border-radius: calc(0.25rem / 2) !important;
 }
 
-._round,
-.form {
+._round {
   border-radius: 0.25rem !important;
 }
 
@@ -1118,6 +1117,7 @@ h6 {
 .form {
   padding: 12px 8px;
   border: 1px solid #cbd2e6;
+  border-radius: calc(0.25rem * 2);
   font-family: "Catamaran", sans-serif;
   font-size: 1.125rem;
 }
@@ -1383,6 +1383,23 @@ a.btn-border-base:hover {
   color: #4b72f1 !important;
 }
 
+.form {
+  border-radius: calc(0.25rem * 2);
+}
+.form::placeholder {
+  font-size: 0.9375rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    width: auto;
+  }
+}
 ._light-text-color {
   color: #7A7E8C !important;
 }
@@ -1472,6 +1489,24 @@ a.btn-border-base:hover {
   margin: 0 auto;
 }
 
+.contact-form .flex-row {
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    width: calc(((100% * 3) /12) - 32px);
+    margin-right: 32px;
+  }
+
+  .menu-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    width: calc((100% * 9) /12);
+  }
+}
 /*--------------------------
 Código Acordeon */
 .acordeon .ac-title::after {
@@ -1619,7 +1654,212 @@ Código Timeline*/
     left: 0%;
   }
 }
-/*--------------------------*/
+/*--------------------------
+Código menu mobile*/
+@media (max-width: 769px) {
+  .menu-mobile {
+    width: 260px;
+    background-color: #4b72f1;
+    position: absolute;
+    top: 59px;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+  }
+  .menu-mobile::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -9px;
+    right: 15px;
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #4b72f1;
+  }
+
+  .menu-mobile.visible {
+    visibility: visible;
+    animation: toRight 0.3s;
+  }
+
+  .menu-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu {
+    flex-direction: column;
+    text-align: left;
+  }
+  .menu .bar-link, .menu .bar-link:visited {
+    color: white;
+  }
+
+  .menu > .bar-item {
+    margin: 0;
+  }
+
+  .bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @keyframes toRight {
+    from {
+      transform: translate3d(-50px, 0, 0);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+  .menu-mobile-button {
+    display: block;
+    width: 22px;
+    height: 22px;
+    color: #4b72f1;
+    border-top: 2px solid;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .menu-mobile-button::before,
+.menu-mobile-button::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: currentColor;
+    margin-top: 5px;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-mobile-button::before {
+    width: 14px;
+  }
+
+  /* Animação */
+  .menu-mobile-button.animate {
+    border-top-color: transparent;
+  }
+
+  .menu-mobile-button.animate::before {
+    margin-top: 0;
+    transform: rotate(130deg);
+    width: auto;
+    top: 4px;
+  }
+
+  .menu-mobile-button.animate::after {
+    margin-top: 0;
+    transform: rotate(45deg);
+    top: 2px;
+  }
+
+  .menu-mobile .bar-link {
+    padding: 16px;
+    display: block;
+  }
+
+  .menu-cta {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    padding-bottom: 16px;
+  }
+}
+/*Dropdown Embutido
+-------------------------*/
+.dropdown {
+  position: relative;
+  padding: 16px;
+}
+.dropdown::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #eff1f5;
+}
+
+.dropdown a {
+  display: block;
+  padding: 12px;
+}
+
+@keyframes toTop {
+  from {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.dropdown {
+  background-color: #eff1f5;
+}
+.dropdown a {
+  padding: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .item-drop {
+    position: relative;
+  }
+  .item-drop::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: right;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+
+  .item-drop.rotate::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown {
+    position: absolute;
+    min-width: 170px;
+    top: 48px;
+    z-index: 900;
+    display: none;
+  }
+
+  .dropdown.active {
+    animation: toTop 0.4s;
+    display: block;
+  }
+
+  .dropdown {
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(5, 5, 5, 0.075);
+  }
+  .dropdown::before {
+    border-bottom-color: white;
+  }
+  .dropdown a {
+    padding: 12px;
+  }
+}
+/*------------------------*/
 @media screen and (min-width: 768px) {
   .intro, .data {
     width: calc(((100% * 6) / 12) - 32px);
@@ -1639,16 +1879,25 @@ Código Timeline*/
   }
 
   .servicos, .type-service {
-    width: calc(((100% * 4) / 12) - 32px);
+    width: calc(((100% * 6) / 12) - 32px);
     margin-right: 32px;
+    margin-bottom: 32px;
   }
   .servicos:last-child, .type-service:last-child {
     margin-right: 0;
   }
 
-  .cons, .social, .vantagens {
-    width: calc(((100% * 5) / 12) - 32px);
+  .contact-form {
+    width: calc((100% * 5) / 12);
+  }
+
+  .cons, .social, .vantagens, .contact-data {
+    width: calc(((100% * 6) / 12) - 32px);
     margin-right: 32px;
+  }
+
+  .contact-data ul {
+    padding-left: 16px;
   }
 
   .pilares-icon {
@@ -1671,9 +1920,39 @@ Código Timeline*/
     margin-right: 32px;
   }
 }
-@media screen and (max-width: 414px) {
+@media screen and (min-width: 1024px) {
+  .servicos, .type-service {
+    width: calc(((100% * 4) / 12) - 32px);
+    margin-right: 32px;
+    margin-bottom: 32px;
+  }
+  .servicos:last-child, .type-service:last-child {
+    margin-right: 0;
+  }
+
+  .contact-form {
+    width: calc((100% * 4) / 12);
+  }
+}
+@media screen and (max-width: 767px) {
   .acordeon {
     width: 100%;
+  }
+
+  .intro, .data-item {
+    order: 1;
+  }
+
+  .data-illustration, .intro-image {
+    order: 0;
+  }
+
+  .intro-image, .servicos, .pilares-item, .data-item, .type-service, .intro-landing img, .vantagens {
+    margin-bottom: 32px;
+  }
+
+  .cons, .footer-widget, .contact-data {
+    margin-bottom: 64px;
   }
 }
 

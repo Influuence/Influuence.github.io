@@ -1,7 +1,7 @@
 .form {
     @include spaceStretch($space-s);
     border: $border-size solid $v-grey-200;
-    @extend %round;
+    border-radius: $border-round-medium;
     font-family: $textFont;
     font-size: $base-text;
     &:focus {

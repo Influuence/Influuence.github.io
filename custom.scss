@@ -86,6 +86,26 @@ a.btn-border-base {
     }
 }
 
+.form {
+    @include roundBorder('medium');
+    &::placeholder {
+        font-size: $small-text;
+    }
+}
+
+
+@include mediaQuery($bp-t){
+    .container {
+        width: 95%;
+    }    
+}
+
+@include mediaQuery($bp-d) {
+    .container {
+        width: auto;
+    }
+}
+
 // -------
 
 ._light-text-color {
@@ -182,6 +202,24 @@ a.btn-border-base {
     margin: 0 auto;
 }
 
+.contact-form .flex-row {
+    flex-direction: column;
+}
+
+@include mediaQuery($bp-t) {
+
+    .logo {
+        width: calc(((100% * 3) /12) - 32px);
+        margin-right: $space-l;
+    }
+    .menu-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        width: calc((100% * 9) /12);
+    }
+}
 
 /*--------------------------
 Código Acordeon */
@@ -347,7 +385,235 @@ Código Timeline*/
     }
   }
 
-/*--------------------------*/
+/*--------------------------
+Código menu mobile*/
+@media(max-width: 769px){
+	.menu-mobile {
+		width: 260px;
+		background-color: $base-color;
+		position: absolute;
+		top: 59px;
+		right: 0;
+		z-index: 1;
+        visibility: hidden;
+        
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -9px;
+            right: 15px;
+            width: 0px;
+            height: 0px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid $base-color;
+        }
+	}
+
+	.menu-mobile.visible {
+		visibility: visible;
+		animation: toRight .3s;
+		
+    } 
+    
+    .menu-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+	.menu {
+        flex-direction: column;
+        text-align: left;
+        & .bar-link, & .bar-link:visited {
+            color: $white-color;
+        }
+	}
+
+	.menu > .bar-item {
+		margin: 0;
+    }
+
+    .bar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @keyframes toRight {
+        from {
+            transform: translate3d(-50px, 0, 0);
+            opacity: 0;
+        }
+    
+        to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1; 
+        }
+    }
+    
+    // Menu Button
+    .menu-mobile-button {
+        display: block;
+        width: 22px;
+        height: 22px;
+        color: $base-color;
+        border-top: 2px solid;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .menu-mobile-button::before,
+    .menu-mobile-button::after {
+        content: '';
+        display: block;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        position: relative;
+        transition: transform .3s ease;
+    }
+    
+     .menu-mobile-button::before {
+        width: 14px;
+    }
+    
+    /* Animação */
+    .menu-mobile-button.animate {
+        border-top-color: transparent;
+    }
+    
+    .menu-mobile-button.animate::before {
+        margin-top: 0;
+        transform: rotate(130deg);
+        width: auto;
+        top: 4px;
+    }
+    
+    .menu-mobile-button.animate::after {
+        margin-top: 0;
+        transform: rotate(45deg);
+        top: 2px;
+    }
+
+    // Estilo 
+    .menu-mobile {
+        & .bar-link {
+            padding: $space-m;
+            display: block;
+        }
+    }
+
+    .menu-cta {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        padding-bottom: $space-m;
+    }
+
+}
+/*Dropdown Embutido
+-------------------------*/
+.dropdown {
+    position: relative;
+    padding: $space-m;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -10px;
+        width: 0px;
+        height: 0px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $lv-500;
+    }
+}
+
+.dropdown a {
+	display: block;
+	padding: 12px;
+}
+
+
+@keyframes toTop {
+	from {
+		transform: translate3d(0, 30px, 0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+} 
+
+// Estilo
+.dropdown {
+    background-color: $lv-500;
+    & a {
+        padding: theHalf($space-s);
+    }
+}
+// Fim Estilo
+
+@media screen and (min-width: 768px){
+    
+    .item-drop {
+        position: relative;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url(../images/arrow-down.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            float: right;
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+    }
+    
+    .item-drop.rotate {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+    
+	.dropdown {
+		position: absolute;
+		min-width: 170px;
+		top: 48px;
+		z-index: 900;
+		display: none;
+	}
+
+	.dropdown.active {
+		animation: toTop .4s;
+		display: block;
+    }
+    
+    // Estilo
+    .dropdown {
+        background-color: $white-color;
+        @include addShadow('regular');
+        &::before {
+            border-bottom-color: $white-color;
+        }
+        & a {
+            padding: theHalf($space-s);
+        }
+    }
+
+}
+
+
+/*------------------------*/
+
 
 @include mediaQuery($bp-t){
     .intro, .data {
@@ -368,16 +634,27 @@ Código Timeline*/
     }
 
     .servicos, .type-service {
-        width: calc(((100% * 4) / 12) - 32px);
+        width: calc(((100% * 6) / 12) - 32px);
         @include spaceInline($space-l);
+        margin-bottom: $space-l;
         &:last-child {
             margin-right: 0;
         } 
     }
 
-    .cons, .social, .vantagens {
-        width: calc(((100% * 5) / 12) - 32px);
+    .contact-form {
+        width: calc((100% * 5) / 12);
+    }
+
+    .cons, .social, .vantagens, .contact-data {
+        width: calc(((100% * 6) / 12) - 32px);
         @include spaceInline($space-l);
+    }
+
+    .contact-data {
+        & ul {
+            padding-left: $space-m;
+        }
     }
 
     .pilares-icon {
@@ -402,9 +679,39 @@ Código Timeline*/
 
 }
 
-@include mediaQuery($bp-s, 'max') {
-    .acordeon {
-        width: 100%;
+@include mediaQuery($bp-d) {
+    .servicos, .type-service {
+        width: calc(((100% * 4) / 12) - 32px);
+        @include spaceInline($space-l);
+        margin-bottom: $space-l;
+        &:last-child {
+            margin-right: 0;
+        } 
+    }
+
+    .contact-form {
+        width: calc((100% * 4) / 12);
     }
 }
 
+@include mediaQuery($bp-t - 1, 'max') {
+    .acordeon {
+        width: 100%;
+    }
+
+    .intro, .data-item {
+        order: 1;
+    }
+
+    .data-illustration, .intro-image {
+        order: 0;
+    }
+
+    .intro-image, .servicos, .pilares-item, .data-item, .type-service, .intro-landing img, .vantagens  {
+        margin-bottom: $space-l;
+    }
+
+    .cons, .footer-widget, .contact-data {
+        margin-bottom: $space-xl;
+    }
+}

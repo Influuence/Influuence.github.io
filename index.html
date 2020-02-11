@@ -11,20 +11,28 @@
 <body>
 <header class="_custom-variation-500">
     <div class="bar">
-        <div class="container flex-row">
-            <div class="logo _space-inline-l">
+        <div class="container bar-container">
+            <div class="logo">
                 <a href="index.html"><img src="images/Influuence.svg" alt="Influuence Logotipo"></a>
             </div>
-            <nav class="menu menu-mobile">
-                <ul class="bar-nav">
+            <nav class="menu-mobile menu-flex" data-menu="menu-mobile">
+                <ul class="bar-nav menu">
                     <li class="bar-item"><a href="index.html" class="bar-link">Início</a></li c>
-                    <li class="bar-item"><a href="#" class="bar-link">Serviços</a></li>
-                    <li class="bar-item"><a href="#" class="bar-link">Contato</a></li>
+                    <li class="bar-item item-drop" data-dropclick="dropdown-button">
+                        <a href="#" class="bar-link">Serviços</a>
+                        <ul class="dropdown" data-dropdown="dropdown">
+							<li><a href="#tt">Anúcios Facebook e Instagram Ads</a></li>
+							<li><a href="websites.html">Desenvolvimento de Websites</a></li>
+							<li><a href="#pp">Anúncios Google Ads</a></li>
+						</ul>
+                    </li>
+                    <li class="bar-item"><a href="contato.html" class="bar-link">Contato</a></li>
                 </ul>
+                <div class="bar-right menu-cta">
+                    <a href="#" class="btn btn-border-accent btn-medium btn-icon"><span class="_space-inline-m btn-icon"><img src="images/whatsapp-button.svg" alt="whatsapp icon"></span> Consultoria gratuita</a>
+                </div>
             </nav>
-            <div class="bar-right menu-cta">
-                <a href="#" class="btn btn-border-accent btn-medium btn-icon"><span class="_space-inline-m btn-icon"><img src="images/whatsapp-button.svg" alt="whatsapp icon"></span> Consultoria gratuita</a>
-            </div>
+            <span class="menu-mobile-button" data-menu="menu-button"></span>
         </div>
     </div>
     <div class="container _default-section _space-stack-m flex-row">
@@ -157,7 +165,6 @@
     <header class="_text-center _space-stack-xl">
         <h2>Aproveite esta oportunidade!</h2>
     </header>
-
    <div class="flex-row _space-between">
         <div class="data">
             <aside class="data-item card-large _space-insert-l _lv-500">
@@ -194,7 +201,7 @@
 
 <footer class="_small-section _dv-500 _white-color">
     <div class="container flex-row">
-        <div class="social">
+        <div class="social footer-widget">
             <header class="_space-stack-l">
                 <h4 class="_white-color">Redes Sociais</h4>
             </header>
@@ -204,7 +211,7 @@
            </div>
         </div>
 
-        <div class="data-contato">
+        <div class="data-contato footer-widget">
             <header class="_space-stack-l">
                 <h4 class="_white-color">Contato</h4>
             </header>
@@ -213,7 +220,7 @@
                <li>E-mail: <a href="mailto:contato@influuence.com">contato@influuence.com</a></li>
            </ul>
 
-           <p class="_mb-0"><a href="#">Página de contato >></a></p>
+           <p class="_mb-0"><a href="contato.html">Página de contato >></a></p>
         </div>
     </div>
     <aside class="container">
