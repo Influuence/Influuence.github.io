@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KTBZ294');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4971F1">
+
+
+    <!-- Config -->
+    <!-- <base href="https://influuence.com"> -->
+    <meta name="description" content="Tem alguma dúvida? Quer fazer uma parceria? Mande uma mensagem pra gente">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="url" content="https://influuence.com/contato.html">
+
+    <!-- Facebook Open Graph -->
+    <meta property="og:url" content="https://influuence.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Entre em contato - Influuence">
+    <meta property="og:image" content="https://influuence.com/images/fb-link.jpg">
+    <meta property="og:description" content="Tem alguma dúvida? Quer fazer uma parceria? Mande uma mensagem pra gente">
+    <meta property="og:site_name" content="Influuence">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@viciada15">
+
     <link href="https://fonts.googleapis.com/css?family=Catamaran:300,400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Teste Novo site</title>
+    <title>Contato | Influuence</title>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTBZ294"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <header class="_custom-variation-500">
     <div class="bar">
         <div class="container bar-container">
@@ -17,19 +51,17 @@
             </div>
             <nav class="menu-mobile menu-flex" data-menu="menu-mobile">
                 <ul class="bar-nav menu">
-                    <li class="bar-item"><a href="index.html" class="bar-link">Início</a></li c>
+                    <li class="bar-item"><a href="index.html" class="bar-link">Início</a></li>
                     <li class="bar-item item-drop" data-dropclick="dropdown-button">
                         <a href="#" class="bar-link">Serviços</a>
                         <ul class="dropdown" data-dropdown="dropdown">
-							<li><a href="#tt">Anúcios Facebook e Instagram Ads</a></li>
 							<li><a href="websites.html">Desenvolvimento de Websites</a></li>
-							<li><a href="#pp">Anúncios Google Ads</a></li>
 						</ul>
                     </li>
                     <li class="bar-item"><a href="contato.html" class="bar-link">Contato</a></li>
                 </ul>
                 <div class="bar-right menu-cta">
-                    <a href="#" class="btn btn-border-accent btn-medium btn-icon"><span class="_space-inline-m btn-icon"><img src="images/whatsapp-button.svg" alt="whatsapp icon"></span> Consultoria gratuita</a>
+                    <a href="http://abre.ai/aKLl" class="btn btn-border-accent btn-medium btn-icon con-btn"><span class="_space-inline-m btn-icon"><img src="images/whatsapp-button.svg" alt="whatsapp icon"></span> Consultoria gratuita</a>
                 </div>
             </nav>
             <span class="menu-mobile-button" data-menu="menu-button"></span>
@@ -43,11 +75,12 @@
     </div>
 </header>
 <section class="container flex-row _default-section _space-between">
+<h2 class="_d-none">Página de Contato</h2>
     <article class="contact-data">
         <header class="_space-stack-m">
             <h2>Entre em contato com a gente</h2>
         </header>
-        <p class="_light-text-color _space-stack-l">A arquitetura da informação em design pode ser definida como uma ciência de estruturação de conteúdo de sites, aplicações web e móveis e software de mídia social</p>
+        <p class="_light-text-color _space-stack-l">Tem alguma dúvida? Quer fazer uma parceria? Mande uma mensagem pra gente preenchendo o formulário ou através dos dados de contato listados abaixo</p>
         <ul class="list mark-list">
             <li>Whatsapp/Telegram: <a href="tel:021970880313">(21) 97088-0313</a> </li>
             <li>E-mail: <a href="mailto:contato@influuence.com">contato@influuence.com</a></li>
@@ -55,12 +88,21 @@
         </ul>
     </article>
     <div class="contact-form card-large _v-grey-100 _r-space-insert-l _shadow-s">
-        <ul class="mark-list _space-stack-l"><li><h5 class="_d-inline-block">Preencha os campos abaixo</h4></li></ul>
-        <form action="#" class="flex-row">
-            <input type="text" class="form _space-stack-m" placeholder="Insira seu nome">
-            <input type="email" class="form _space-stack-m" placeholder="Insira seu e-mail">
-            <textarea rows="5" class="form _space-stack-l" placeholder="Digite sua mensagem"></textarea>
-            <button class="btn btn-base">Enviar mensagem</button>
+        <ul class="mark-list _space-stack-l"><li><h5 class="_d-inline-block">Preencha os campos abaixo</h5></li></ul>
+        <form action="https://formspree.io/xeqgwalp" method="POST" class="flex-row" id="submit">
+            <input type="text" class="form _space-stack-m" placeholder="Insira seu nome" name="nome" required>
+            <input type="email" class="form _space-stack-m" placeholder="Insira seu e-mail" name="email" required>
+            <input type="email" class="form _space-stack-m _d-none" id="no-data" placeholder="Não preencha este campo" name="r9texst">
+            <textarea rows="5" class="form _space-stack-l" placeholder="Digite sua mensagem" name="mensagem" required></textarea>
+            <input type="submit" class="btn btn-base" value="Enviar Mensagem" id="my-form-button"></input>
+            <div class="load-wrapp">
+                <div class="load-3 _d-none">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <p id="my-form-status"></p>
         </form>
     </div>
     
@@ -68,19 +110,19 @@
 <footer class="_small-section _dv-500 _white-color">
     <div class="container flex-row">
         <div class="social footer-widget">
-            <header class="_space-stack-l">
+            <div class="_space-stack-l">
                 <h4 class="_white-color">Redes Sociais</h4>
-            </header>
+            </div>
            <div class="social-links">
-                <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+                <a href="https://www.facebook.com/webdevInfluuence/" target="_blank"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+                <a href="https://www.instagram.com/influuenceweb/" target="_blank"><img src="images/icon-instagram.svg" alt="Instagram"></a>
            </div>
         </div>
 
         <div class="data-contato footer-widget">
-            <header class="_space-stack-l">
+            <div class="_space-stack-l">
                 <h4 class="_white-color">Contato</h4>
-            </header>
+            </div>
            <ul class="mark-list _space-stack-l">
                <li>Whatsapp/Telegram: <a href="tel:021970880313">(21) 97088-0313</a></li>
                <li>E-mail: <a href="mailto:contato@influuence.com">contato@influuence.com</a></li>
@@ -97,6 +139,7 @@
     </aside>
 </footer>
 <script src="js/components.js"></script>
+<script src="js/form.js"></script>
 </body>
 
 </html>

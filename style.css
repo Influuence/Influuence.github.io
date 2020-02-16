@@ -1390,6 +1390,30 @@ a.btn-border-base:hover {
   font-size: 0.9375rem;
 }
 
+.btn-border-grey {
+  color: #7A7E8C;
+  border: 1px solid #7A7E8C;
+}
+
+a.btn-border-grey {
+  color: #7A7E8C !important;
+}
+
+.btn-border-accent,
+.btn-border-base,
+.btn-border-success,
+.btn-border-warning,
+.btn-border-danger {
+  transition: transform 0.3s ease;
+}
+.btn-border-accent:hover,
+.btn-border-base:hover,
+.btn-border-success:hover,
+.btn-border-warning:hover,
+.btn-border-danger:hover {
+  transform: scale(1.1);
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 95%;
@@ -1414,6 +1438,10 @@ a.btn-border-base:hover {
 
 ._d-inline-block {
   display: inline-block !important;
+}
+
+._d-none {
+  display: none !important;
 }
 
 ._w-100 {
@@ -1446,6 +1474,10 @@ a.btn-border-base:hover {
 
 ._relative {
   position: relative;
+}
+
+._overflow {
+  overflow: hidden;
 }
 
 .mark-list li {
@@ -1507,6 +1539,10 @@ a.btn-border-base:hover {
     width: calc((100% * 9) /12);
   }
 }
+#my-form-status {
+  margin-top: 8px;
+}
+
 /*--------------------------
 Código Acordeon */
 .acordeon .ac-title::after {
@@ -1857,6 +1893,39 @@ Código menu mobile*/
   }
   .dropdown a {
     padding: 12px;
+  }
+}
+/*------------------------
+Load Nimation*/
+.line {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #4b72f1;
+}
+
+.load-3 .line:nth-last-child(1) {
+  animation: loadingC 0.6s 0.1s linear infinite;
+}
+
+.load-3 .line:nth-last-child(2) {
+  animation: loadingC 0.6s 0.2s linear infinite;
+}
+
+.load-3 .line:nth-last-child(3) {
+  animation: loadingC 0.6s 0.3s linear infinite;
+}
+
+@keyframes loadingC {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
 /*------------------------*/

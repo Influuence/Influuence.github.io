@@ -94,6 +94,26 @@ a.btn-border-base {
 }
 
 
+.btn-border-grey {
+    color: $light-text-color;
+    border: 1px solid $light-text-color;
+}
+
+a.btn-border-grey  {
+    color: $light-text-color !important;
+}
+
+.btn-border-accent,
+.btn-border-base,
+.btn-border-success,
+.btn-border-warning,
+.btn-border-danger {
+    transition: transform .3s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 @include mediaQuery($bp-t){
     .container {
         width: 95%;
@@ -122,6 +142,10 @@ a.btn-border-base {
 
 ._d-inline-block {
     display: inline-block !important;
+}
+
+._d-none {
+    display: none !important;
 }
 
 ._w-100 {
@@ -153,6 +177,10 @@ a.btn-border-base {
 }
 ._relative {
     position: relative;
+}
+
+._overflow {
+    overflow: hidden;
 }
 
 // ----------
@@ -219,6 +247,12 @@ a.btn-border-base {
         width: 100%;
         width: calc((100% * 9) /12);
     }
+}
+
+// Status do formulário
+
+#my-form-status {
+    margin-top: $space-s;
 }
 
 /*--------------------------
@@ -609,6 +643,34 @@ Código menu mobile*/
         }
     }
 
+}
+
+
+/*------------------------
+Load Nimation*/
+.line {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: $base-color;
+}
+
+.load-3 .line:nth-last-child(1) {animation: loadingC .6s .1s linear infinite;}
+.load-3 .line:nth-last-child(2) {animation: loadingC .6s .2s linear infinite;}
+.load-3 .line:nth-last-child(3) {animation: loadingC .6s .3s linear infinite;}
+
+
+@keyframes loadingC {
+    0% {
+        transform: translate(0,0);
+    }
+    50% {
+        transform: translate(0,15px);
+    }
+    100% {
+        transform: translate(0,0);
+    }     
 }
 
 
