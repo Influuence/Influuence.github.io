@@ -74,7 +74,8 @@
 (function(){
     const clickScroll = document.querySelector('a[href^="#servicos"]');
 
-    clickScroll.addEventListener('click', scrollToIdOnClick);
+    if (clickScroll ){
+        clickScroll.addEventListener('click', scrollToIdOnClick);
 
     function scrollToIdOnClick(e){
         e.preventDefault();
@@ -123,6 +124,10 @@
           window.scroll(newX, newY);
         }, 1000 / 60); // 60 fps
       };
+        
+    }
+
+    
 })();
 
 // Desabilitandp Botão
